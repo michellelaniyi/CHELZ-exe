@@ -1,0 +1,312 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Plan your academic life with Chelz.exe.">
+    <title>Chelz.exe | Academic Planner</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/planner.js" defer></script>
+</head>
+
+<body class="planner-page">
+
+    <header class="site-header">
+        <a href="index.html" class="logo">Chelz<span>.exe</span></a>
+
+        <nav class="navigation" aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="projects.html">Projects</a>
+            <a href="planner.html" class="active" aria-current="page">Planner</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+        <a href="contact.html" class="header-cta">Let's connect ↗</a>
+    </header>
+
+    <main class="planner-main">
+
+        <!-- Page introduction -->
+        <section class="planner-hero">
+            <p class="eyebrow">YOUR ACADEMIC SPACE</p>
+            <h1>Plan it. <span class="accent">Do it.</span></h1>
+
+            <p class="planner-intro">
+                A little structure goes a long way. Keep track of your
+                assignments, study sessions, and academic goals in one place.
+            </p>
+        </section>
+
+        <!-- Weekly study timetable -->
+        <section class="planner-schedule" aria-labelledby="schedule-title">
+
+            <div class="planner-heading">
+                <div>
+                    <p class="eyebrow">YOUR WEEK AT A GLANCE</p>
+                    <h2 id="schedule-title">
+                        Study timetable<span class="accent">.</span>
+                    </h2>
+                </div>
+
+                <p class="schedule-note">
+                    A flexible guide, not a rigid rulebook.
+                </p>
+            </div>
+
+            <div class="planner-table-wrapper">
+                <table class="planner-table schedule-table">
+                    <caption class="visually-hidden">
+                        Weekly study timetable
+                    </caption>
+
+                    <thead>
+                        <tr>
+                            <th scope="col">Day</th>
+                            <th scope="col">Study focus</th>
+                            <th scope="col">Session</th>
+                            <th scope="col">Notes</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <th scope="row">Monday</th>
+                            <td>COS 102</td>
+                            <td>Deep study</td>
+                            <td>Problem-solving practice</td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">Tuesday</th>
+                            <td>MTH 102</td>
+                            <td>Deep study</td>
+                            <td>Functions and exercises</td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">Wednesday</th>
+                            <td>CSC 106</td>
+                            <td>Learn and build</td>
+                            <td>Web development practice</td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">Thursday</th>
+                            <td>PHY 102 / PHY 108</td>
+                            <td>Deep study</td>
+                            <td>Theory and practical review</td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">Friday</th>
+                            <td>GST 112 / GST 122 / COS 111</td>
+                            <td>Study and review</td>
+                            <td>Coursework and certification</td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">Saturday</th>
+                            <td>Weekly revision</td>
+                            <td>Light review</td>
+                            <td>Review difficult topics</td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">Sunday</th>
+                            <td>Planning and catch-up</td>
+                            <td>Flexible</td>
+                            <td>Prepare for the new week</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p class="schedule-footnote">
+                This is a starter timetable. Adjust the subjects and sessions
+                to match your current workload.
+            </p>
+
+        </section>
+
+        <!-- Task dashboard -->
+        <section class="planner-dashboard" aria-label="Academic task planner">
+
+            <div class="planner-heading">
+                <div>
+                    <p class="eyebrow">YOUR WORKSPACE</p>
+                    <h2>My tasks<span class="accent">.</span></h2>
+                </div>
+
+                <p class="planner-date" id="planner-date"></p>
+            </div>
+
+            <!-- Task statistics -->
+            <div class="planner-stats">
+
+                <article class="planner-stat">
+                    <span class="stat-label">Total tasks</span>
+                    <strong id="total-count">0</strong>
+                </article>
+
+                <article class="planner-stat">
+                    <span class="stat-label">Pending</span>
+                    <strong id="pending-count">0</strong>
+                </article>
+
+                <article class="planner-stat">
+                    <span class="stat-label">Completed</span>
+                    <strong id="completed-count">0</strong>
+                </article>
+
+            </div>
+
+            <!-- Add task form -->
+            <form id="task-form" class="task-form">
+
+                <div class="form-heading">
+                    <h3>Add a task</h3>
+                    <p>One step at a time.</p>
+                </div>
+
+                <div class="task-input-group">
+                    <label for="task-title">Task name</label>
+                    <input
+                        type="text"
+                        id="task-title"
+                        name="task-title"
+                        placeholder="e.g. Revise quadratic functions"
+                        maxlength="120"
+                        required
+                    >
+                </div>
+
+                <div class="task-form-row">
+
+                    <div class="task-input-group">
+                        <label for="task-course">Course</label>
+
+                        <select id="task-course" name="task-course" required>
+                            <option value="">Choose a course</option>
+                            <option value="COS 102">COS 102 — Problem Solving</option>
+                            <option value="CSC 106">CSC 106 — Web Technologies</option>
+                            <option value="GST 112">GST 112 — Nigerian People and Culture</option>
+                            <option value="GST 122">GST 122 — Communication Skills</option>
+                            <option value="COS 111">COS 111 — Technical Certification</option>
+                            <option value="MTH 102">MTH 102 — Elementary Mathematics II</option>
+                            <option value="PHY 102">PHY 102 — General Physics II</option>
+                            <option value="PHY 108">PHY 108 — Physics Practical II</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="task-input-group">
+                        <label for="task-due-date">Due date</label>
+                        <input
+                            type="date"
+                            id="task-due-date"
+                            name="task-due-date"
+                        >
+                    </div>
+
+                </div>
+
+                <button
+                    type="submit"
+                    class="button button-primary add-task-button"
+                >
+                    + Add task
+                </button>
+
+            </form>
+
+            <!-- Task list controls -->
+            <div class="task-toolbar">
+
+                <h3>Your to-do list</h3>
+
+                <div class="task-filters" role="group" aria-label="Filter tasks">
+                    <button
+                        type="button"
+                        class="task-filter active"
+                        data-filter="all"
+                        aria-pressed="true"
+                    >
+                        All
+                    </button>
+
+                    <button
+                        type="button"
+                        class="task-filter"
+                        data-filter="pending"
+                        aria-pressed="false"
+                    >
+                        Pending
+                    </button>
+
+                    <button
+                        type="button"
+                        class="task-filter"
+                        data-filter="completed"
+                        aria-pressed="false"
+                    >
+                        Completed
+                    </button>
+                </div>
+
+            </div>
+
+            <!-- Responsive task table -->
+            <div class="planner-table-wrapper task-table-wrapper">
+
+                <table class="planner-table task-table">
+                    <caption class="visually-hidden">
+                        Academic tasks, due dates, and completion status
+                    </caption>
+
+                    <thead>
+                        <tr>
+                            <th scope="col">Task</th>
+                            <th scope="col">Course</th>
+                            <th scope="col">Due date</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="task-table-body" aria-live="polite">
+                        <!-- Tasks will be inserted here by planner.js. -->
+                    </tbody>
+
+                </table>
+
+            </div>
+
+            <p id="empty-message" class="empty-message">
+                Your list is looking peaceful. Add your first task above.
+            </p>
+
+        </section>
+
+        <!-- Encouragement -->
+        <section class="planner-reminder">
+            <span class="reminder-icon" aria-hidden="true">✳</span>
+
+            <div>
+                <h3>Progress, not perfection.</h3>
+                <p>
+                    You don't have to do everything today. Just keep showing up.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>© 2026 Chelz.exe</p>
+        <p>Made with curiosity &amp; a little bit of chaos.</p>
+    </footer>
+
+</body>
+</html>
